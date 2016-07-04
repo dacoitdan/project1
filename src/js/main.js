@@ -163,8 +163,20 @@ imgView.prototype.bindEvents = function (){
 }
 
 var searchCode = `
+		<div class="top">
+			<nav>	
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+					<li><a href="https://api.nasa.gov/">NASA API</a></li>
+				</ul>
+			</nav>
+			<header>
+				<h1>Jaidev & Adrian's Globe Explorer</h1>
+			</header>
+		</div>
 		<div>
-			<h1>Jaidev + Adrian's Globe Explorer</h1>
 			<div>
 				<label for="lat">LAT: </label><input type="number" name="lat" id="lat" class="input">
 			</div>
@@ -175,10 +187,20 @@ var searchCode = `
 		<div>
 			<button id="searchbutton">Search!</button>
 		</div>
+		<footer>
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="index.html"><img src="src/images/globe.png" class="logo"></a></li>
+				<li><a href="contact.html">CONTACT</a></li>
+				<li><a href="https://api.nasa.gov/">NASA API</a></li>
+			</ul>
+		</footer>
 	`;
 
 var searchV = new searchView(searchCode);
 searchV.bindEvents();
 searchV.render();
+
 
 

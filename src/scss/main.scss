@@ -1,13 +1,18 @@
-@import 'header';
-@import 'nav';
-
+@import 'vars';
 
 body {
-	background-color: #fafafa;
-	/*font-family: arial;*/
+	background-color: $color-cream;
+	font-family: arial;
 	color: #3c3c3c;
 	margin: 0 auto;
 }
+
+@import 'top';
+@import 'nav';
+@import 'header';
+@import 'logo';
+@import 'footer';
+@import 'media';
 
 #search {
 	width: 100%;
@@ -18,7 +23,8 @@ body {
 }
 
 #search > div {
-	width: 500px;
+	// width: 500px;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
