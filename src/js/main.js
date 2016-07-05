@@ -13,6 +13,27 @@ View.prototype.hide = function(){
 	document.body.removeChild(this.el);
 }
 
+function pageView(data, id){
+	View.call(this, data);
+	this.el.id = id;
+}
+
+pageView.prototype = Object.create(View.prototype);
+
+pageView.prototype.bindEvents = function () {
+	var _this = this;
+	_this.el.innerHTML = _this.data;
+	var b = document.createElement('button');
+	b.textContent = 'Back'
+	b.addEventListener('click', function(){
+		_this.hide()
+		searchV.render();
+		searchV.el.querySelector('#lat').value = '';
+		searchV.el.querySelector('#lon').value = '';
+	})
+	_this.el.appendChild(b);
+}
+
 function searchView(data){
 	View.call(this, data);
 	this.el.innerHTML = this.data;
@@ -23,6 +44,7 @@ searchView.prototype = Object.create(View.prototype);
 
 searchView.prototype.bindEvents = function () {
 	var _this = this;
+
 	_this.el.querySelector("#searchbutton").addEventListener('click', function(){
 
 		var lat = document.querySelector("#lat").value;
@@ -63,6 +85,21 @@ searchView.prototype.bindEvents = function () {
 		req.send(null);
 
 	})
+
+	_this.el.querySelector(".about").addEventListener('click', function(){
+		var aboutV = new pageView(aboutHTML, 'about');
+		aboutV.bindEvents();
+		_this.hide();
+		aboutV.render();
+	})
+
+	_this.el.querySelector(".contact").addEventListener('click', function(){
+		var aboutV = new pageView(contactHTML, 'contact');
+		aboutV.bindEvents();
+		_this.hide();
+		aboutV.render();
+	})
+
 }
 
 function listView(data, params){
@@ -168,9 +205,9 @@ var searchCode = `
 			<nav>	
 				<ul>
 					<li><a href="index.html">HOME</a></li>
-					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="#" class="about">ABOUT</a></li>
 					<li class = "logo"><a href="index.html"><img src="src/images/globe.png" class="globe"></a></li>
-					<li><a href="contact.html">CONTACT</a></li>
+					<li><a href="#" class="contact">CONTACT</a></li>
 					<li><a href="https://api.nasa.gov/">NASA API</a></li>
 				</ul>
 			</nav>
@@ -190,6 +227,14 @@ var searchCode = `
 			<button id="searchbutton">Search!</button>
 		</div>
 	`;
+
+var aboutHTML = `
+			about
+		`;
+
+var contactHTML = `
+			contact
+		`;
 
 var searchV = new searchView(searchCode);
 searchV.bindEvents();
