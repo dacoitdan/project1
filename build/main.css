@@ -32,12 +32,13 @@ body {
 #image {
   box-sizing: border-box;
   width: 100%;
-  padding: 0% 30%;
+  padding: 0% 15%;
   display: flex;
   flex-direction: column;
   align-items: flex-start; }
 
 #image > h1 {
+  padding: 0;
   margin-left: 2vw; }
 
 #imagecontainer {
@@ -48,7 +49,8 @@ body {
   font-size: 1.2em; }
 
 #imagecontainer > img {
-  margin-bottom: 2vh; }
+  margin-bottom: 2vh;
+  width: 100%; }
 
 .back {
   margin-left: 2vw;
@@ -85,7 +87,7 @@ header {
   background: #3D7EAA;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #3D7EAA, #FFE47A);
-  background: linear-gradient(to left, rgba(61, 126, 170, 0.6), rgba(255, 228, 122, 0.6)), url("../../src/images/mountain.jpg");
+  background: linear-gradient(to left, rgba(61, 126, 170, 0.6), rgba(255, 228, 122, 0.6)), url("../src/images/mountain.jpg");
   background-size: cover;
   opacity: 0.75; }
   header h1 {

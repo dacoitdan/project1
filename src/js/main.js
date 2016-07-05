@@ -132,6 +132,7 @@ imgView.prototype.bindEvents = function (){
 	imgcont.id = 'imagecontainer';
 	_this.el.appendChild(imgcont);
 	imgcont.textContent = 'Loading';
+	img.classList.add('locImg');
 
 	req.onreadystatechange = function(){
 		if(req.readyState === 4) {
