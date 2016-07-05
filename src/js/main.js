@@ -168,6 +168,7 @@ var searchCode = `
 				<ul>
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="about.html">ABOUT</a></li>
+					<li class = "logo"><a href="index.html"><img src="src/images/globe.png" class="globe"></a></li>
 					<li><a href="contact.html">CONTACT</a></li>
 					<li><a href="https://api.nasa.gov/">NASA API</a></li>
 				</ul>
@@ -187,15 +188,6 @@ var searchCode = `
 		<div>
 			<button id="searchbutton">Search!</button>
 		</div>
-		<footer>
-			<ul>
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="about.html">ABOUT</a></li>
-				<li><a href="index.html"><img src="src/images/globe.png" class="logo"></a></li>
-				<li><a href="contact.html">CONTACT</a></li>
-				<li><a href="https://api.nasa.gov/">NASA API</a></li>
-			</ul>
-		</footer>
 	`;
 
 var searchV = new searchView(searchCode);

@@ -1,20 +1,14 @@
 header {
 	line-height: 4em;
 	width: 100%;
-	// background: linear-gradient($color-darkBlue, $color-blue); /* Standard syntax */	
-	// color: $color-textWhite;
-	// text-align: center;
-	// font-size: 1em;
-	// box-shadow:10px 5px 5px black;
-	// 
-	// 
-	
-
 	background: #3D7EAA; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #3D7EAA , #FFE47A); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #3D7EAA , #FFE47A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    opacity: 0.75;
+	background: -webkit-linear-gradient(to left, #3D7EAA , #FFE47A);
+	background: linear-gradient(to left, rgba(61,126,170,.6) , rgba(255, 228, 122, .6)), url("../../src/images/mountain.jpg");	
+ 	background-size: cover;
+ 	   opacity: 0.75;
 	h1 {
 		text-align: center;
+		opacity: 1;
+		color: black;
 	}
 }

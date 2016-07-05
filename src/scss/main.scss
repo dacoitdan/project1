@@ -1,18 +1,12 @@
 @import 'vars';
 
 body {
+	// background-image: url('src/images/mountain.jpg');
 	background-color: $color-cream;
 	font-family: arial;
 	color: #3c3c3c;
 	margin: 0 auto;
 }
-
-@import 'top';
-@import 'nav';
-@import 'header';
-@import 'logo';
-@import 'footer';
-@import 'media';
 
 #search {
 	width: 100%;
@@ -75,3 +69,10 @@ body {
 	margin-left: 2vw;
 	display: inline;
 }
+
+@import 'top';
+@import 'nav';
+@import 'header';
+@import 'logo';
+@import 'footer';
+@import 'media';
