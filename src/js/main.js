@@ -34,6 +34,15 @@ pageView.prototype.bindEvents = function () {
 	_this.el.appendChild(b);
 }
 
+var aboutHTML = `
+			about
+		`;
+
+var contactHTML = `
+			contact
+		`;
+
+
 function searchView(data){
 	View.call(this, data);
 	this.el.innerHTML = this.data;
@@ -94,10 +103,10 @@ searchView.prototype.bindEvents = function () {
 	})
 
 	_this.el.querySelector(".contact").addEventListener('click', function(){
-		var aboutV = new pageView(contactHTML, 'contact');
-		aboutV.bindEvents();
+		var contactV = new pageView(contactHTML, 'contact');
+		contactV.bindEvents();
 		_this.hide();
-		aboutV.render();
+		contactV.render();
 	})
 
 }
@@ -227,14 +236,6 @@ var searchCode = `
 			<button id="searchbutton">Search!</button>
 		</div>
 	`;
-
-var aboutHTML = `
-			about
-		`;
-
-var contactHTML = `
-			contact
-		`;
 
 var searchV = new searchView(searchCode);
 searchV.bindEvents();
