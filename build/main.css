@@ -62,6 +62,9 @@ div > p {
   margin-left: 2vw;
   display: inline; }
 
+.contactpage a {
+  font-size: 1em; }
+
 .back {
   display: block;
   margin: 1em 0;
