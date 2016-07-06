@@ -64,7 +64,7 @@ pageView.prototype.bindEvents = function () {
 	_this.el.innerHTML = _this.data;
 	var b = document.createElement('button');
 	b.textContent = 'Back'
-	b.classList.add = 'Back';
+	b.classList.add('back');
 	b.addEventListener('click', function(){
 		_this.hide()
 		searchV.render();
@@ -81,9 +81,6 @@ var aboutHTML = `
 				<h2>About</h2>
 				<p>This is a simple web application that utilizes the Google and NASA APIs. Given a location, the application will display a list of dates at which NASA's Landsat has imaged the location. The user may then view any of the individual images.</p>
 			</div>
-			<div class="form">
-
-			</div>	
 		</div>
 		`;
 
@@ -96,9 +93,12 @@ var contactHTML = `
 				<h2>Contact Us</h2>
 				<p>Let us know if you have any questions.</p>
 			</div>
-			<div class="form">
-
-			</div>	
+			<div>
+				Adrian: <a href = "http://github.com/adrianaddison">GitHub</a>
+			</div>
+			<div>
+				Jaidev: <a href = "http://github.com/dacoitdan">GitHub</a>
+			</div>
 		</div>
 		`;
 
