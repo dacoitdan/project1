@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function(){
+			if(req.readyState === 4){
+				var key = JSON.parse(req.responseText);
+				req0.open('GET', 'http://cola.codes/chest?key='+key.key)
+				req0.send(null);
+			}
+		}
+		req.open('POST', 'http://cola.codes/dungeon');
+		req.send(null);
+
+		var req0 = new XMLHttpRequest();
+		req0.onreadystatechange = function(){
+			if(req0.readyState === 4){
+				var url = JSON.parse(req0.responseText).success;
+				var img = document.createElement('img');
+				img.src = url;
+				document.body.appendChild(img);
+			}
+		}
+
+	</script>
+</body>
+</html>

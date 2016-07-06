@@ -40,23 +40,22 @@ function initialize() {
         }
       });
 }
+
 function codeAddress() {
     geocoder = new google.maps.Geocoder();
     var address = document.getElementById("my-address").value;
     geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
+	if (status == google.maps.GeocoderStatus.OK) {
+		search(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+	} 
 
-      alert("Latitude: "+results[0].geometry.location.lat());
-      alert("Longitude: "+results[0].geometry.location.lng());
-      } 
-
-      else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
+	else {
+		alert("Geocode was not successful for the following reason: " + status);
+	}
     });
   }
-google.maps.event.addDomListener(window, 'load', initialize);
 
+google.maps.event.addDomListener(window, 'load', initialize);
 
 pageView.prototype = Object.create(View.prototype);
 
@@ -102,49 +101,38 @@ function searchView(data){
 
 searchView.prototype = Object.create(View.prototype);
 
+search = function(latitude, longitude){
+
+	var lat = latitude;
+	var lon = longitude;
+	var today = new Date();
+	var d = today.getDate();
+	var m = today.getMonth()+1;
+	var y = today.getFullYear()-1;
+	var x = '' + y + '-' + m + '-' + d;
+
+	var params = [lon, lat, x];
+
+	var img = document.createElement('img');
+
+	var req = new XMLHttpRequest();
+	// var req2 = new XMLHttpRequest();
+
+	req.onreadystatechange = function () {
+		if(req.readyState === 4){
+			var assets = JSON.parse(req.responseText).results;
+			var listV = new listView(assets, params);
+			searchV.hide();
+			listV.bindEvents();	
+			listV.render();
+		}
+	}
+	req.open('GET', 'https://api.nasa.gov/planetary/earth/assets?lon='+lon+'&lat='+lat+'&begin='+x+'&api_key=oimeUzHTeCeTKXALwmS3oe5kBevFbqaeVrcqBgK6');
+	req.send(null);
+}
+
 searchView.prototype.bindEvents = function () {
 	var _this = this;
-
-	_this.el.querySelector("#searchbutton").addEventListener('click', function(){
-
-		var lat = document.querySelector("#lat").value;
-		var lon = document.querySelector("#lon").value;
-		var today = new Date();
-		var d = today.getDate();
-		var m = today.getMonth()+1;
-		var y = today.getFullYear()-1;
-		var x = '' + y + '-' + m + '-' + d;
-
-		var params = [lon, lat, x];
-
-		var img = document.createElement('img');
-
-		var req = new XMLHttpRequest();
-		// var req2 = new XMLHttpRequest();
-
-		req.onreadystatechange = function () {
-			if(req.readyState === 4){
-				var assets = JSON.parse(req.responseText).results;
-				var listV = new listView(assets, params);
-				_this.hide();
-				listV.bindEvents();	
-				listV.render();
-				// req2.open('GET', 'https://api.nasa.gov/planetary/earth/imagery?lon='+lon+'&lat='+lat+'&date='+date+'&api_key=oimeUzHTeCeTKXALwmS3oe5kBevFbqaeVrcqBgK6');
-				// req2.send(null);
-			}
-		}
-		// req2.onreadystatechange = function(){
-		// 	if(req2.readyState === 4) {
-		// 		console.log(req2.responseText);
-		// 		img.src = JSON.parse(req2.responseText).url;
-		// 		img.id = 'displayImg';
-		// 		document.querySelector('#search').appendChild(img);
-		// 	}
-		// }
-		req.open('GET', 'https://api.nasa.gov/planetary/earth/assets?lon='+lon+'&lat='+lat+'&begin='+x+'&api_key=oimeUzHTeCeTKXALwmS3oe5kBevFbqaeVrcqBgK6');
-		req.send(null);
-
-	})
 
 	_this.el.querySelector(".about").addEventListener('click', function(){
 		var aboutV = new pageView(aboutHTML, 'about');
@@ -278,17 +266,8 @@ var searchCode = `
 		<div>
 			<div>
 				<input type="text" id="my-address">
-        		<button id="find" onClick="codeAddress();">Find</button>
+        		<button id="find" onClick="codeAddress();">Search</button>
 			</div>
-			<div>
-				<label for="lat">LAT: </label><input type="number" name="lat" id="lat" class="input">
-			</div>
-			<div>
-				<label for="lon">LON: </label><input type="number" name="lon" id="lon" class="input">
-			</div>
-		</div>
-		<div>
-			<button id="searchbutton">Search!</button>
 		</div>
 	`;
 

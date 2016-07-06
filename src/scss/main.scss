@@ -48,8 +48,13 @@ body {
 	align-items: flex-start;
 }
 
+#list > h1, 
 #image > h1 {
 	padding: 0;
+	
+}
+
+#image > h1 {
 	margin-left: 2vw;
 }
 
