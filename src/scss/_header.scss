@@ -1,17 +1,20 @@
 header {
-	line-height: 4em;
-	height: 325px;
 	width: 100%;
 	background: #3D7EAA; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #3D7EAA , #FFE47A);
 	background: linear-gradient(to left, rgba(61,126,170,.6) , rgba(255, 228, 122, .6)), url("../src/images/mountain.jpg");	
  	background-size: cover;
- 	   opacity: 0.75;
+ 	opacity: 0.75;
+ 	display: flex;
+ 	flex-direction: row;
+ 	justify-content: center;
+ 	align-items: center;
 	h1 {
 		text-align: center;
 		opacity: 1;
 		color: $color-darkBlue;
 		margin-top: 0;
+		margin-bottom: 0;
 		-webkit-text-stroke-width: .5px;
    		-webkit-text-stroke-color: $color-cream;
 	}

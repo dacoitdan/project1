@@ -76,9 +76,14 @@ div > p {
 	text-align: center;
 }
 
-.back {
+#image .back {
 	margin-left: 2vw;
 	display: inline;
+}
+
+.back {
+	display: block;
+	margin: 1em 0;
 }
 
 @import 'top';

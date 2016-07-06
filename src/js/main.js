@@ -54,8 +54,8 @@ function codeAddress() {
 	}
     });
   }
-
 google.maps.event.addDomListener(window, 'load', initialize);
+
 
 pageView.prototype = Object.create(View.prototype);
 
@@ -64,11 +64,10 @@ pageView.prototype.bindEvents = function () {
 	_this.el.innerHTML = _this.data;
 	var b = document.createElement('button');
 	b.textContent = 'Back'
+	b.classList.add = 'Back';
 	b.addEventListener('click', function(){
 		_this.hide()
 		searchV.render();
-		searchV.el.querySelector('#lat').value = '';
-		searchV.el.querySelector('#lon').value = '';
 	})
 	_this.el.appendChild(b);
 }
@@ -180,11 +179,10 @@ listView.prototype.bindEvents = function(){
 
 	var b = document.createElement('button');
 	b.textContent = 'Back'
+	b.classList.add('back');
 	b.addEventListener('click', function(){
 		_this.hide()
 		searchV.render();
-		searchV.el.querySelector('#lat').value = '';
-		searchV.el.querySelector('#lon').value = '';
 	})
 	_this.el.appendChild(b);
 }
@@ -260,13 +258,15 @@ var searchCode = `
 				</ul>
 			</nav>
 			<header>
-				<h1>Jaidev & Adrian's Globe Explorer</h1>
+				<div>
+					<h1>Jaidev & Adrian's Globe Explorer</h1>
+				</div>
 			</header>
 		</div>
 		<div>
 			<div>
 				<input type="text" id="my-address">
-        		<button id="find" onClick="codeAddress();">Search</button>
+        		<button id="find" onClick="codeAddress();">Find</button>
 			</div>
 		</div>
 	`;
