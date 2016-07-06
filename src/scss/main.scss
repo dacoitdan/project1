@@ -84,12 +84,19 @@ div > p {
 .back {
 	display: block;
 	margin: 1em 0;
+	background-color: $color-crimson;
+    border: solid;
+    color: $color-cream;
+    box-shadow: 1px 1px 1px 1px $color-darkBlue;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
 }
 
 @import 'top';
 @import 'nav';
 @import 'header';
 @import 'logo';
-@import 'footer';
 @import 'contact';
+@import 'displayImg';
 @import 'media';

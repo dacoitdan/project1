@@ -69,18 +69,29 @@ pageView.prototype.bindEvents = function () {
 		_this.hide()
 		searchV.render();
 	})
-	_this.el.appendChild(b);
+	_this.el.children[1].appendChild(b);
 }
 
 var aboutHTML = `
-			about
+		<header>
+			<h1>Jaidev & Adrian's Globe Explorer</h1>
+		</header>
+		<div class="aboutpage">
+			<div>
+				<h2>About</h2>
+				<p>This is a simple web application that utilizes the Google and NASA APIs. Given a location, the application will display a list of dates at which NASA's Landsat has imaged the location. The user may then view any of the individual images.</p>
+			</div>
+			<div class="form">
+
+			</div>	
+		</div>
 		`;
 
 var contactHTML = `
-		<div class="contact">
-			<header>
-				<h1>Jaidev & Adrian's Globe Explorer</h1>
-			</header>
+		<header>
+			<h1>Jaidev & Adrian's Globe Explorer</h1>
+		</header>
+		<div class="contactpage">
 			<div>
 				<h2>Contact Us</h2>
 				<p>Let us know if you have any questions.</p>

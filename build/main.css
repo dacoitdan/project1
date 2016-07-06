@@ -64,7 +64,14 @@ div > p {
 
 .back {
   display: block;
-  margin: 1em 0; }
+  margin: 1em 0;
+  background-color: #891C12;
+  border: solid;
+  color: #F9FFE9;
+  box-shadow: 1px 1px 1px 1px #031B38;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none; }
 
 #search > .top {
   background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(transparent 3px, #f2f2f2 3px, #f2f2f2 78px, transparent 78px), linear-gradient(-90deg, #aaa 1px, transparent 1px), linear-gradient(-90deg, transparent 3px, #f2f2f2 3px, #f2f2f2 78px, transparent 78px), linear-gradient(#aaa 1px, transparent 1px), #f2f2f2;
@@ -117,27 +124,19 @@ header {
   height: 20px;
   vertical-align: middle; }
 
-footer {
-  line-height: 4em;
+.aboutpage,
+.contactpage {
+  box-sizing: border-box;
   width: 100%;
-  background-color: #031B38;
-  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px), radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-  color: #E5EBE5;
-  text-align: center; }
-  footer li,
-  footer a {
-    font-size: .5em;
-    text-align: center;
-    text-decoration: none;
-    line-height: 2em;
-    display: inline-block;
-    color: #F9FFE9;
-    padding: 1em; }
+  padding: 0% 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
 
-.contact {
-  line-height: 4em; }
+#displayImg {
+  border-style: solid;
+  border-color: white;
+  box-shadow: 2px 2px 2px 2px #031B38; }
 
 @media (min-width: 500px) {
   li > a {
