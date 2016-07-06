@@ -52,6 +52,9 @@ body {
   margin-bottom: 2vh;
   width: 100%; }
 
+div > p {
+  text-align: center; }
+
 .back {
   margin-left: 2vw;
   display: inline; }
@@ -93,7 +96,10 @@ header {
   header h1 {
     text-align: center;
     opacity: 1;
-    color: black; }
+    color: #031B38;
+    margin-top: 0;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #F9FFE9; }
 
 .globe {
   width: 20px;
@@ -119,12 +125,15 @@ footer {
     color: #F9FFE9;
     padding: 1em; }
 
+.contact {
+  line-height: 4em; }
+
 @media (min-width: 500px) {
   li > a {
     font-size: 200%; }
 
   h1 {
-    font-size: 2em;
+    font-size: 4em;
     padding: .5em; }
 
   .globe {
@@ -141,7 +150,7 @@ footer {
 
   h1 {
     padding: 1em;
-    font-size: 3em;
+    font-size: 5em;
     line-height: 100%; }
 
   nav .logo {

@@ -67,6 +67,10 @@ body {
 	width: 100%;
 }
 
+div > p {
+	text-align: center;
+}
+
 .back {
 	margin-left: 2vw;
 	display: inline;
@@ -77,4 +81,5 @@ body {
 @import 'header';
 @import 'logo';
 @import 'footer';
+@import 'contact';
 @import 'media';

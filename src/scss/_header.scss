@@ -9,6 +9,9 @@ header {
 	h1 {
 		text-align: center;
 		opacity: 1;
-		color: black;
+		color: $color-darkBlue;
+		margin-top: 0;
+		-webkit-text-stroke-width: .5px;
+   		-webkit-text-stroke-color: $color-cream;
 	}
 }
